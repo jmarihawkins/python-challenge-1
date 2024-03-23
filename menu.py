@@ -21,7 +21,7 @@ def place_order():
         print_menu()
         
         # Get user input for menu selection
-        menu_selection = input("Enter your selection: ")
+        menu_selection = input("Enter the number of your selection: ")
 
         # Input validation
         if not menu_selection.isdigit():
@@ -52,33 +52,31 @@ def place_order():
             "Quantity": quantity
         })
 
-        # Prompt if the customer wants to continue ordering
+        # Ask if the user wants to continue ordering
         while True:
-            choice = input("Would you like to keep ordering? (y/n): ").lower()
-            match choice:
-                case 'y':
-                    break
-                case 'n':
-                    print("Thank you for your order.")
-                    return
-                case _:
-                    print("Please enter 'y' or 'n'.")
+            choice = input("Would you like to order anything else? (y/n): ").lower()
+            if choice in ('y', 'n'):
+                break
+            else:
+                print("Invalid input. Please enter 'y' or 'n'.")
+        if choice == 'n':
+            print("Thank you for your order.")
+            return
 
 # Function to print receipt
 def print_receipt():
     print("Order Receipt:")
     print("Item name                 | Price  | Quantity")
-    print("--------------------------|--------|----------")
-    total_price = sum(item["Price"] * item["Quantity"] for item in order)
+    print("---------------------------------------------")
+    total_price = 0
     for item in order:
         item_name = item["Item name"]
         price = item["Price"]
         quantity = item["Quantity"]
-        space1 = " " * (27 - len(item_name))
-        space2 = " " * (9 - len(str(price)))
-        print(f"{item_name}{space1}| ${price}{space2}| {quantity}")
-    print("--------------------------|--------|----------")
-    print(f"Total: ${total_price}")
+        total_price += price * quantity
+        print(f"{item_name.ljust(27)}| ${price:.2f}{' ' * (8 - len(str(price)) + 2)}| {quantity}")
+    print("---------------------------------------------")
+    print(f"Total: ${total_price:.2f}")
 
 # Main function
 def main():
