@@ -27,4 +27,4 @@ Overall, this script provides a simple interactive interface for customers to br
 
 # Modifications
 
-Feel free to modify the menu items or add new categories according to the food truck's offerings. You can also extend the functionality to include features like payment processing or order tracking.
+Feel free to modify the menu items or add new categories according to the food truck's offerings. You can also extend the functionality to include features like payment processing and/or order tracking.

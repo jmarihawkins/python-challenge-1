@@ -158,7 +158,7 @@ for item in order_list:
     print(f"{item_name.ljust(26)}| ${price:.2f} | {quantity}")
     total_cost += price * quantity
 
-# Print total cost
+# Print the total cost
 print(f"\nTotal cost: ${total_cost:.2f}")
 
 # Print a thank you message
