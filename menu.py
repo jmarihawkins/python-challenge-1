@@ -159,21 +159,7 @@ for item in order_list:
     total_cost += price * quantity
 
 # Print total cost
-print(f"\nTotal cost: ${total_cost:.2f} 👍")
-print("       /\\")
-print("      /  \\")
-print("     /    \\")
-print("    /      \\")
-print("   /________\\")
-print("     |    |")
-print("     |    |")
-print("     |    |")
-print("     |    |")
-print("    /|    |\\")
-print("   / |    | \\")
-print("  /  |    |  \\")
-print(" /   |    |   \\")
-print("/    |____|    \\")
-print("        ||")
-print("        ||")
-print("        ||")
+print(f"\nTotal cost: ${total_cost:.2f}")
+
+# Print a thank you message
+print("Thank You! Come Again!")
