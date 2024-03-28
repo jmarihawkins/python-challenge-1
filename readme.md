@@ -1,6 +1,6 @@
 # Food Truck Ordering System
 
-The Python script offers a user-friendly experience, allowing customers to effortlessly navigate the menu, select their desired items, and specify the quantity for each. Once the ordering process is complete, the script generates a comprehensive receipt displaying all ordered items, their respective prices, and quantities. Additionally, it automatically computes the total cost of the order, streamlining the entire transaction process for both customers and the food truck operator.
+This Python script offers a user-friendly experience, allowing customers to effortlessly navigate the menu, select their desired items, and specify the quantity for each. Once the ordering process is complete, the script generates a comprehensive receipt displaying all ordered items, their respective prices, and quantities. Additionally, it automatically computes the total cost of the order, streamlining the entire transaction process for both customers and the food truck operator.
 
 # How to Use
 1. Launching the Program: Run the script in a Python environment.
