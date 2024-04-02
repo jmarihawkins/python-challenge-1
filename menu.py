@@ -134,29 +134,32 @@ while place_order:
         print("You didn't select a number.")
 
     while True:
-        keep_ordering = input("Would you like to keep ordering? (Y)es or (N)o: ")
-
-        if keep_ordering.upper() == "Y":
-            break
-        elif keep_ordering.upper() == "N":
-            place_order = False
-            break
-        else:
-            print("Invalid input. Please enter 'Y' or 'N'.")
+        # Ask if the customer wants to continue ordering
+        keep_ordering = input("Would you like to keep ordering? (Y)es or (N)o: ").lower()
+        # Match-case statement to check customer's choice
+        match keep_ordering:
+            case 'y':
+                break
+            case 'n':
+                place_order = False
+                break
+            case _:
+                print("Invalid input. Please enter 'Y' or 'N'.")
 
 # Print out the customer's order
 print("This is what we are preparing for you.\n")
 print("Item name                 | Price  | Quantity")
 print("--------------------------|--------|----------")
 
+# Calculate total cost using list comprehension
+total_cost = sum(item["Price"] * item["Quantity"] for item in order_list)
+
 # Loop through the items in the customer's order and print
-total_cost = 0
 for item in order_list:
     item_name = item["Item name"]
     price = item["Price"]
     quantity = item["Quantity"]
     print(f"{item_name.ljust(26)}| ${price:.2f} | {quantity}")
-    total_cost += price * quantity
 
 # Print the total cost
 print(f"\nTotal cost: ${total_cost:.2f}")
